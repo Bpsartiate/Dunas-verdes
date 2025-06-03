@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes bg-shine {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  .animate-bg-shine {
+    animation: bg-shine 2.1s linear infinite;
+  }
+}
+
