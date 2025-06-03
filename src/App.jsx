@@ -9,7 +9,7 @@ import Booking from "./components/Booking";
 import Investment from "./components/Investment";
 import FAQ from "./components/FAQ";
 import Gallery from "./components/Gallery";
-import review from "./components/review";
+import Review from "./components/Review";
 // import Contact from "./components/Contact";
 import Activities from "./components/Activities";
 import Footer from "./components/Footer";
@@ -42,7 +42,7 @@ function App() {
           <Gallery />
           <Activities />
           <FAQ />
-          <review />
+          <Review />
           {/* <Contact /> */}
           <Investment />
           <Footer />
