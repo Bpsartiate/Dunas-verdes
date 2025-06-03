@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const DrawCircleText = () => {
+export const DrawCircleText = ({ t }) => {
   return (
     <div className="grid place-content-center px-4 text-green rounded-2xl mb-2">
       <h1 className="max-w-2xl text-center text-3xl md:text-5xl leading-snug">
-        Your escape to{" "}
+        {t.drawcircle_hero_1}{" "}
         <span className="relative inline-block">
-          paradise 
+          {t.drawcircle_hero_2}
           <svg
             viewBox="0 0 286 73"
             fill="none"
@@ -27,7 +27,7 @@ export const DrawCircleText = () => {
             />
           </svg>
         </span>{" "}
-        is closer than you think.
+        {t.drawcircle_hero_3}
       </h1>
     </div>
   );

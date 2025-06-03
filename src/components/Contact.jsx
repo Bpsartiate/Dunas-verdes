@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Contact = () => {
+const Contact = ({ t }) => {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -27,7 +27,7 @@ const Contact = () => {
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="Your Name"
+            placeholder={t.contact_your_name}
             required
             className="rounded-xl px-4 py-2 text-base bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 focus:ring-2 focus:ring-green-400 focus:outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 shadow-sm transition"
           />
@@ -36,7 +36,7 @@ const Contact = () => {
             name="email"
             value={form.email}
             onChange={handleChange}
-            placeholder="Your Email"
+            placeholder={t.contact_your_email}
             required
             className="rounded-xl px-4 py-2 text-base bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 focus:ring-2 focus:ring-green-400 focus:outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 shadow-sm transition"
           />
@@ -44,7 +44,7 @@ const Contact = () => {
             name="message"
             value={form.message}
             onChange={handleChange}
-            placeholder="Your Message"
+            placeholder={t.contact_your_message}
             required
             rows={4}
             className="rounded-xl px-4 py-2 text-base bg-white/80 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 focus:ring-2 focus:ring-green-400 focus:outline-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 shadow-sm transition resize-none"
@@ -53,11 +53,11 @@ const Contact = () => {
             type="submit"
             className="w-full py-2 rounded-full text-base bg-gradient-to-r from-green-600 to-blue-500 text-white font-bold shadow-lg hover:from-green-700 hover:to-blue-600 transition"
           >
-            Send Message
+            {t.contact_send_message}
           </button>
           {sent && (
             <div className="text-center text-green-700 font-semibold mt-2 text-base">
-              Thank you! Your message has been sent.
+              {t.contact_thank_you}
             </div>
           )}
         </form>

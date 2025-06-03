@@ -2,46 +2,46 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-const villas = [
-	{
-		img: "/imgs/IMG_4632.JPG",
-		cardImg: "/imgs/IMG_4637.JPG",
-		cardImg2: "/imgs/IMG_4636.JPG",
-		text: " Our private reserve spans over 200 hectares of untouched coastal beauty, where luxury living blends seamlessly with conservation, community empowerment, and sustainable tourism.",
-	},
-	{
-		img: "/imgs/IMG_4636.JPG",
-		cardImg: "/imgs/IMG_4636.JPG",
-		cardImg2: "/imgs/IMG_4635.JPG",
-		text: "Whether you’re staying in our exclusive eco-villa, exploring the reserve, or investing in the future of responsible travel you’ve found your place.",
-	},
-	{
-		img: "/imgs/IMG_4635.JPG",
-		cardImg: "/imgs/IMG_4635.JPG",
-		cardImg2: "/imgs/IMG_4634.JPG",
-		text: "Reserva Dunas Verdes began as a personal retreat. But the land spoke louder calling for protection, purpose, and people.",
-	},
-	{
-		img: "/imgs/IMG_4634.JPG",
-		cardImg: "/imgs/IMG_4634.JPG",
-		cardImg2: "/imgs/IMG_4633.JPG",
-		text: "Discover tranquility in our fourth villa, nestled in nature for a peaceful retreat.",
-	},
-	{
-		img: "/imgs/IMG_4633.JPG",
-		cardImg: "/imgs/IMG_4633.JPG",
-		cardImg2: "/imgs/IMG_4632.JPG",
-		text: "Today, it’s a bold initiative to preserve one of Mozambique’s last wild coastlines, reintroduce native wildlife, and empower local communities through responsible tourism, renewable energy, and sustainable business models.",
-	},
-	{
-		img: "/imgs/IMG_4632.JPG",
-		cardImg: "/imgs/IMG_4632.JPG",
-		cardImg2: "/imgs/IMG_4631.JPG",
-		text: "We are building a sanctuary where nature thrives, travelers reconnect, and investors become stewards of a shared legacy.",
-	},
-];
+const Villas = ({ t }) => {
+	const villas = [
+		{
+			img: "/imgs/IMG_4632.JPG",
+			cardImg: "/imgs/IMG_4637.JPG",
+			cardImg2: "/imgs/IMG_4636.JPG",
+			text: t.about_card4,
+		},
+		{
+			img: "/imgs/IMG_4636.JPG",
+			cardImg: "/imgs/IMG_4636.JPG",
+			cardImg2: "/imgs/IMG_4635.JPG",
+			text: t.about_card2,
+		},
+		{
+			img: "/imgs/IMG_4635.JPG",
+			cardImg: "/imgs/IMG_4635.JPG",
+			cardImg2: "/imgs/IMG_4634.JPG",
+			text: t.about_card5,
+		},
+		{
+			img: "/imgs/IMG_4634.JPG",
+			cardImg: "/imgs/IMG_4634.JPG",
+			cardImg2: "/imgs/IMG_4633.JPG",
+			text: t.about_card3,
+		},
+		{
+			img: "/imgs/IMG_4633.JPG",
+			cardImg: "/imgs/IMG_4633.JPG",
+			cardImg2: "/imgs/IMG_4632.JPG",
+			text: t.about_card1,
+		},
+		{
+			img: "/imgs/IMG_4632.JPG",
+			cardImg: "/imgs/IMG_4632.JPG",
+			cardImg2: "/imgs/IMG_4631.JPG",
+			text: t.about_subtitle,
+		},
+	];
 
-const Villas = () => {
 	const [current, setCurrent] = useState(0);
 	const handlePrev = () =>
 		setCurrent((prev) => (prev === 0 ? villas.length - 1 : prev - 1));
@@ -63,7 +63,7 @@ const Villas = () => {
 					{/* Left: About Us and Travel Card */}
 					<div className="flex flex-col gap-6 ">
 						<div>
-							<span className="text-sm text-gray-500">About Us</span>
+							<span className="text-sm text-gray-500">{t.about_us}</span>
 							<div id="pagination" className="flex items-center mt-2">
 								<span className="text-3xl font-semibold text-black">
 									{String(current + 1).padStart(2, "0")}
@@ -87,7 +87,7 @@ const Villas = () => {
 								/>
 							</AnimatePresence>
 							<p className="mt-4 text-lg font-medium text-gray-800">
-								Travel Far and Wide, <br /> Discover Your World.
+								{t.travel_far_and_wide}
 							</p>
 						</div>
 					</div>
@@ -96,7 +96,7 @@ const Villas = () => {
 					<div className="flex flex-col md:flex-col gap-6">
 						<div className="flex-1 flex flex-col justify-center gap-6 md:mx-8 mt-8 md:mt-0">
 							<h1 className="text-4xl  md:text-3xl font-bold text-gray-900 leading-tight">
-								Making Memories Around <br /> the World, Together.
+								{t.making_memories}
 							</h1>
 							<AnimatePresence mode="wait">
 								<motion.p

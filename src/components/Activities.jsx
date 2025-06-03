@@ -1,30 +1,51 @@
 import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
 import { IoIosBoat } from "react-icons/io";
-import { GiMeditation,GiFallingLeaf } from "react-icons/gi";
+import { GiMeditation, GiFallingLeaf } from "react-icons/gi";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";
 import { useState } from "react";
 
-const Activities = () => (
+const Activities = ({ t }) => (
   <motion.section
     id="activities"
-    className="relative grid min-h-screen"
+    className="relative bg-white grid min-h-screen"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
   >
-    <VerticalAccordion />
+    <VerticalAccordion t={t} />
   </motion.section>
 );
 
-const VerticalAccordion = () => {
+const VerticalAccordion = ({ t }) => {
+  const items = [
+    {
+      id: 1,
+      title: t.activities_marine_title,
+      Icon: IoIosBoat,
+      imgSrc: "/imgs/IMG_4644.JPG",
+      description: t.activities_marine_desc,
+    },
+    {
+      id: 2,
+      title: t.activities_cultural_title,
+      Icon: GiMeditation,
+      imgSrc: "/imgs/marine.jpeg",
+      description: t.activities_cultural_desc,
+    },
+    {
+      id: 3,
+      title: t.activities_nature_title,
+      Icon: GiFallingLeaf,
+      imgSrc: "/imgs/join.jpeg",
+      description: t.activities_nature_desc,
+    },
+  ];
   const [open, setOpen] = useState(items[0].id);
   return (
-    
-    <section className="p-4">
-      <h1 className="text-3xl py-4 px-10 font-bold text-white mb-4">Activities</h1>
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
+    <section className="w-full min-h-screen">
+      <div className="flex flex-col lg:flex-row h-fit lg:h-full w-full max-w-6xl mx-auto shadow overflow-hidden">
         {items.map((item) => (
           <Panel
             key={item.id}
@@ -48,7 +69,7 @@ const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
   return (
     <>
       <button
-        className="bg-white hover:bg-slate-50 transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group"
+        className="bg-white hover:bg-slate-50 transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group cursor-pointer"
         onClick={() => setOpen(id)}
       >
         <span
@@ -83,7 +104,7 @@ const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 bg-black/40 backdrop-blur-sm text-white"
+              className="px-4 pb-4 bg-black/40 backdrop-blur-sm text-white"
             >
               <p>{description}</p>
             </motion.div>
@@ -106,40 +127,5 @@ const descriptionVariants = {
   open: { opacity: 1, y: "0%", transition: { delay: 0.125 } },
   closed: { opacity: 0, y: "100%" },
 };
-const items = [
-  {
-    id: 1,
-    title: "Marine Adventures",
-    Icon: IoIosBoat,
-    imgSrc:"/imgs/IMG_4644.JPG",
-    description:
-    "Whale watching (June–October) for humpback whales and calves Snorkeling & diving with manta rays, whale sharks, and sea turtles Ocean safaris and dhow sailing trips from Tofo or Barra; Paddleboarding in calm lagoon waters or guided mangrove tours"
-  },
-  {
-    id: 2,
-    title: "Cultural & Relaxation Experiences",
-    Icon: GiMeditation,
-    imgSrc:"/imgs/marine.jpeg",
-    description:
-      "Visit the charming colonial town of Inhambane with its Portuguese architecture and local markets; Sunset drinks and seafood at beachfront restaurants in Tofo or Barra; Discover local craft shops and capulana boutiques; Enjoy a massage or yoga session with the ocean breeze"
-  },
-  {
-    id: 3,
-    title: " Nature & Conservation",
-    Icon: GiFallingLeaf,
-    imgSrc:"/imgs/join.jpeg",
-    description:
-    "Join our plastic cleanup walks or artisanal workshops at the reserve; Explore the dune trails and wildlife zones on foot, bike, or horseback; Participate in eco-tours to understand our conservation and rewilding projects"
-  },
-  // {
-  //   id: 4,
-  //   title: "Grow faster",
-  //   Icon: FiBarChart,
-  //   imgSrc:
-  //     "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-  //   description:
-  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-  // },
-];
 
 export default Activities;

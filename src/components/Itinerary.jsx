@@ -4,36 +4,35 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { GiHorizonRoad } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 
-const Itinerary = () => {
+const Itinerary = ({ t }) => {
   return (
     <StyledWrapper>
       <div className="stepper-box">
-        <h1 className="text-4xl font-bold text-green-900 mb-8 text-start drop-shadow-lg">Itinerary</h1>
+        <h1 className="text-4xl font-bold text-green-900 mb-8 text-start drop-shadow-lg">{t.itinerary_title}</h1>
         <div className="stepper-step stepper-completed">
            <div className="stepper-circle"><FaPlaneDeparture/></div>
           <div className="stepper-line" />
           <div className="stepper-content">
-            <div className="stepper-title"> Airport</div>
+            <div className="stepper-title">{t.itinerary_airport_title}</div>
             <div className="stepper-status flex flex-row items-center gap-1" style={{lineHeight: '1.5', verticalAlign: 'middle'}}>
-              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>Maputo or Vilanculos</span>
+              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>{t.itinerary_airport_locations}</span>
             </div>
-            <div className="stepper-time">Daily or several-times-weekly flights<br/>We offer private 4x4 transfers from Inhambane Airport to the reserve (approx. 35–45 minutes)</div>
+            <div className="stepper-time">{t.itinerary_airport_time}</div>
           </div>
         </div>
         <div className="stepper-step stepper-active">
           <div className="stepper-circle"><GiHorizonRoad/></div>
           <div className="stepper-line" />
           <div className="stepper-content">
-            <div className="stepper-title">By Road</div>
+            <div className="stepper-title">{t.itinerary_road_title}</div>
            <div className="stepper-status flex flex-row items-center gap-1" style={{lineHeight: '1.5', verticalAlign: 'middle'}}>
-              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>From Maputo</span>
+              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>{t.itinerary_road_from_maputo}</span>
             </div>
-            <div className="stepper-time">Approximately 8–9 hours by car (600 km), on a mostly paved and scenic route</div>
+            <div className="stepper-time">{t.itinerary_road_time_maputo}</div>
             <div className="stepper-status flex flex-row items-center gap-1" style={{lineHeight: '1.5', verticalAlign: 'middle'}}>
-              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>From Vilanculos</span>
+              <FaLocationDot className="text-lg text-red-500 align-middle" style={{display: 'inline-block', verticalAlign: 'middle'}} /> <span style={{display: 'inline-block', verticalAlign: 'middle'}}>{t.itinerary_road_from_vilanculos}</span>
             </div>
-            <div className="stepper-time">A 4–5 hour drive along the coast, with an optional stop in Maxixe or Inhassoro</div>
-          
+            <div className="stepper-time">{t.itinerary_road_time_vilanculos}</div>
           </div>
         </div>
         {/* <div className="stepper-step stepper-pending">

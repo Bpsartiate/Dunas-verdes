@@ -17,7 +17,7 @@ return (
 };
 // Booking page for Dunas Verder
 // Unique layout: full screen, centered card, back button, no site navbar/footer, elegant glassmorphic style
-const Booking = ({ onBack }) => {
+const Booking = ({ onBack, language, t }) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -65,12 +65,12 @@ const Booking = ({ onBack }) => {
             ></path>
           </svg>
         </div>
-        <p className="translate-x-2">Go Back</p>
+        <p className="translate-x-2">{t.booking_go_back}</p>
       </button>
       <div className="w-full bg-white mx-auto rounded-3xl shadow-2xl md:p-12 flex flex-col gap-8 glassmorphic border border-green-100/60 mt-16">
         {/* General row for title */}
         <div className="w-full flex flex-row items-center justify-center mb-8">
-          <DrawCircleText />
+          <DrawCircleText t={t} />
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Column */}
@@ -102,7 +102,7 @@ const Booking = ({ onBack }) => {
               <button type="submit" className="w-full py-3 rounded-xl bg-gradient-to-r from-green-400 via-blue-400 to-green-500 text-white font-bold text-lg shadow-lg hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-green-300 animate-shimmer">Book Now</button>
             </form> */}
             {submitted && (
-              <div className="text-center text-green-700 font-semibold text-xl animate-pulse py-12">Thank you! We received your booking request.</div>
+              <div className="text-center text-green-700 font-semibold text-xl animate-pulse py-12">{t.booking_thank_you}</div>
             )}
                {/* Video Card */}
                 <div className="rounded-xl overflow-hidden shadow-lg border border-green-100 bg-black flex flex-col items-center p-0">
@@ -111,33 +111,33 @@ const Booking = ({ onBack }) => {
                     Your browser does not support the video tag.
                   </video>
                   <div className="p-3 w-full text-center bg-white rounded-b-xl">
-                    <span className="font-semibold text-green-900">Watch: Whale Watching Experience</span>
+                    <span className="font-semibold text-green-900">{t.booking_watch_video}</span>
                   </div>
                 </div>
                 {/* Services Title */}
-                <h2 className="mt-8 mb-4 text-2xl font-bold text-green-900 text-start drop-shadow-lg">Service includes</h2>
+                <h2 className="mt-8 mb-4 text-2xl font-bold text-green-900 text-start drop-shadow-lg">{t.booking_service_includes}</h2>
                 {/* Services List - Now using CardSlider for infinite slider */}
                 <div className="pt-10">
                   <CardSlider
                     cards={[
                       {
-                        title: "Boat Tours",
-                        body: "Curated nature experiences and boat tours",
+                        title: t.booking_boat_tours_title,
+                        body: t.booking_boat_tours_body,
                         image: "/imgs/boat.svg",
                       },
                       {
-                        title: "Onboard Services",
-                        body: "Locally-sourced, gourmet cuisine",
+                        title: t.booking_onboard_services_title,
+                        body: t.booking_onboard_services_body,
                         image: "/imgs/food.svg",
                       },
                       {
-                        title: "Concierge",
-                        body: "Full-time cook, cleaners",
+                        title: t.booking_concierge_title,
+                        body: t.booking_concierge_body,
                         image: "/imgs/concierge.svg",
                       },
                       {
-                        title: "Garden Access",
-                        body: "Private gardens and relaxation areas",
+                        title: t.booking_garden_access_title,
+                        body: t.booking_garden_access_body,
                         image: "/imgs/garden.svg",
                       },
                     ]}
@@ -145,13 +145,13 @@ const Booking = ({ onBack }) => {
                 </div>
                 {/* Itinerary Section */}
                 <div className="mb-8">
-                  <Itinerary />
+                  <Itinerary t={t} />
                 </div>
           </div>
           {/* Right Column (Sidebar) */}
           <aside className="w-full  md:w-[600px] flex-shrink-0 md:sticky md:top-24">
                 <div className="rounded-xl border border-green-200 bg-white shadow p-4 flex flex-col items-center">
-              <div className="text-lg font-bold text-green-900 mb-4">Booking Summary</div>
+              <div className="text-lg font-bold text-green-900 mb-4">{t.booking_summary}</div>
               {/* Calendar and info */}
               
               <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
@@ -183,13 +183,13 @@ const Booking = ({ onBack }) => {
                     className="rounded-xl border border-green-200 shadow w-full mb-2"
                   />
                   <div className="flex flex-wrap gap-2 mt-2 text-xs">
-                    <span className="inline-block w-3 h-3 bg-blue-100 border border-blue-400 rounded-full mr-1 align-middle"></span> Whale Season
-                    <span className="inline-block w-3 h-3 bg-red-200 border border-red-400 rounded-full ml-4 mr-1 align-middle"></span> Booked
+                    <span className="inline-block w-3 h-3 bg-blue-100 border border-blue-400 rounded-full mr-1 align-middle"></span> {t.booking_whale_season}
+                    <span className="inline-block w-3 h-3 bg-red-200 border border-red-400 rounded-full ml-4 mr-1 align-middle"></span> {t.booking_booked}
                   </div>
                 </div>
                 {/* BestTimeToVisit */}
                 <div className="flex flex-col h-full">
-                  <BestTimeToVisit />
+                  <BestTimeToVisit t={t} />
                 </div>
               </div>
             </div>

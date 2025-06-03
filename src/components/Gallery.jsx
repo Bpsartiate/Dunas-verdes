@@ -2,18 +2,19 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
-const Gallery = () => {
+const Gallery = ({ t }) => {
   return (
     <section id="gallery" className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-neutral-950 py-16">
       <h2 className="relative z-0 text-[10vw] font-black text-neutral-800 md:text-[120px] mb-8">
-        Galerie<span className="text-indigo-500">.</span>
+        {t.gallery_title}
+        <span className="text-indigo-500">.</span>
       </h2>
-      <Cards />
+      <Cards t={t} />
     </section>
   );
 };
 
-const Cards = () => {
+const Cards = ({ t }) => {
   const containerRef = useRef(null);
 
   return (
@@ -21,7 +22,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4632.JPG"
-        alt="Dune et océan"
+        alt={t.gallery_alt_dune_ocean}
         rotate="6deg"
         top="20%"
         left="25%"
@@ -30,7 +31,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4633.JPG"
-        alt="Lever de soleil"
+        alt={t.gallery_alt_lever_soleil}
         rotate="12deg"
         top="45%"
         left="60%"
@@ -39,7 +40,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4634.JPG"
-        alt="Sentier sauvage"
+        alt={t.gallery_alt_sentier_sauvage}
         rotate="-6deg"
         top="20%"
         left="40%"
@@ -48,7 +49,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4635.JPG"
-        alt="Faune locale"
+        alt={t.gallery_alt_faune_locale}
         rotate="8deg"
         top="50%"
         left="40%"
@@ -57,7 +58,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4636.JPG"
-        alt="Plage préservée"
+        alt={t.gallery_alt_plage_preservee}
         rotate="18deg"
         top="20%"
         left="65%"
@@ -66,7 +67,7 @@ const Cards = () => {
       <Card
         containerRef={containerRef}
         src="/imgs/IMG_4637.JPG"
-        alt="Coucher de soleil"
+        alt={t.gallery_alt_coucher_soleil}
         rotate="-3deg"
         top="35%"
         left="55%"

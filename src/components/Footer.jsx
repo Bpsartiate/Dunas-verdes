@@ -1,22 +1,22 @@
 import React from "react";
 import Contact from "./Contact";
 
-const Footer = () => (
+const Footer = ({ language, t }) => (
     <div id="contact" className="w-full min-h-screen flex items-center justify-center bg-black">
         <div className="px-20 w-full px-4 text-white pt-20 flex flex-col">
             <div className="flex flex-col md:flex-row w-full gap-8">
                 {/* First Column: Title and Description */}
                 <div className="flex flex-col w-full md:w-1/2 gap-4 justify-center md:justify-start mt-8 md:mt-0">
                     <div className="w-full text-4xl md:text-7xl font-bold flex items-center justify-center md:justify-start mb-2 md:mb-4">
-                        <h1 className="w-full">How can we help you. get in touch</h1>
+                        <h1 className="w-full">{t.footer_title || "How can we help you. get in touch"}</h1>
                     </div>
                     <div className="w-full">
-                        <p className="text-gray-400 flex items-center text-base md:text-lg">We'd love to hear from you! Fill out the form and we'll get back to you soon.</p>
+                        <p className="text-gray-400 flex items-center text-base md:text-lg">{t.footer_subtitle || "We'd love to hear from you! Fill out the form and we'll get back to you soon."}</p>
                     </div>
                 </div>
                 {/* Second Column: Contact Form */}
                 <div className="w-full md:w-1/2 flex justify-center items-center">
-                    <Contact />
+                    <Contact language={language} t={t} />
                 </div>
             </div>
            
@@ -26,32 +26,32 @@ const Footer = () => (
                             className="cursor-pointer font-bold text-gray-600 hover:text-white uppercase"
                             onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Dunas Verdes
+                            {t.dunasVerdes || "Dunas Verdes"}
                         </a>
                     <nav className="hidden md:flex flex-row gap-8">
                         <a
                             className="cursor-pointer text-gray-600 hover:text-white uppercase"
                             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            About
+                            {t.footer_about || "About"}
                         </a>
                         <a
                             className="cursor-pointer text-gray-600 hover:text-white uppercase"
                             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Services
+                            {t.footer_services || "Services"}
                         </a>
                         <a
                             className="cursor-pointer text-gray-600 hover:text-white uppercase"
                             onClick={() => document.getElementById('FAQ')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Why us
+                            {t.footer_whyus || "Why us"}
                         </a>
                         <a
                             className="cursor-pointer text-gray-600 hover:text-white uppercase"
                             onClick={() => document.getElementById('Investment')?.scrollIntoView({ behavior: 'smooth' })}
                         >
-                            Investment
+                            {t.footer_investment || "Investment"}
                         </a>
                     </nav>
                     <div className="flex flex-row space-x-8 items-center justify-between">
@@ -76,7 +76,7 @@ const Footer = () => (
                     </div>
                 </div>
                 <hr className="border-gray-600"/>
-                <p className="w-full text-center my-12 text-gray-600">Copyright © 2025 Dunas Verdes</p>
+                <p className="w-full text-center my-12 text-gray-600">{t.footer_copyright || "Copyright © 2025 Dunas Verdes"}</p>
             </div>
         </div>
     </div>

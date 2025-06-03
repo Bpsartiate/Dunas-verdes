@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaGlobe, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import fr from "../fr.json";
+import en from "../en.json";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -8,19 +10,13 @@ const scrollToSection = (id) => {
   }
 };
 
-const Navbar = ({ onBookClick }) => {
+const translations = { EN: en,FR: fr };
+
+const Navbar = ({ onBookClick, language, setLanguage, translations }) => {
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("FR");
   const [villasDropdown, setVillasDropdown] = useState(false);
-
-  const navItems = [
-    { label: "À propos", id: "about" },
-    { label: "Réserve", id: "reserve" },
-    { label: "gallery", id: "gallery" },
-    { label: "Activities", id: "activities" },
-    { label: "Investissement", id: "investment" },
-  ];
+  const navItems = translations[language].navItems;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +35,7 @@ const Navbar = ({ onBookClick }) => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <button type="button" onClick={() => scrollToSection("hero")} className="py-2 pl-[50px] font-bold text-xl bg-transparent focus:outline-none cursor-pointer">
-            Dunas Verdes
+            {translations[language].dunasVerdes}
           </button>
         </div>
 
@@ -62,8 +58,8 @@ const Navbar = ({ onBookClick }) => {
 <div className=" md:flex items-center space-x-2">
   <button
     type="button"
-    onClick={() => setLanguage(language === "FR" ? "EN" : "FR")}
-    className="flex items-center space-x-2 px-2 py-2 hover:text-gray-400 transition focus:outline-none cursor-pointer"
+    onClick={() => setLanguage(language === "EN" ? "FR" : "EN")}
+FR className="flex items-center space-x-2 px-2 py-2 hover:text-gray-400 transition focus:outline-none cursor-pointer"
   >
     <span className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-gray-400">
       <FaGlobe className="text-xl" />
@@ -75,7 +71,7 @@ const Navbar = ({ onBookClick }) => {
     onClick={() => { scrollToSection("contact"); setMenuOpen(false); }}
     className="hidden md:flex px-4 bg-white-900 py-2 rounded-full border border-black text-black font-semibold  hover:bg-black/10 transition text-center"
   >
-    Contact
+    {translations[language].contact}
   </button>
 </div>
         {/* Menu Mobile */}
@@ -90,7 +86,7 @@ const Navbar = ({ onBookClick }) => {
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-gray-900 text-white md:hidden flex flex-col items-center space-y-4 py-1">
           {navItems.map((item) => {
-            if (item.label === "Villas") {
+            if (item.label === translations[language].villas) {
               return (
                 <div key={item.id} className="w-full flex flex-col items-center">
                   <button
@@ -98,13 +94,13 @@ const Navbar = ({ onBookClick }) => {
                     onClick={() => setVillasDropdown((open) => !open)}
                     className="px-2 py-2 hover:text-gray-400 bg-transparent w-full text-center cursor-pointer"
                   >
-                    {item.label}
+                    {translations[language].villas}
                   </button>
                   {villasDropdown && (
                     <div className="flex flex-col w-full bg-gray-800 rounded-b">
-                      <button type="button" onClick={() => { scrollToSection("FAQ"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">FAQ</button>
-                      <button type="button" onClick={() => { scrollToSection("Activities"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">Galerie</button>
-                      <button type="button" onClick={() => { scrollToSection("Review"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">Reviewer</button>
+                      <button type="button" onClick={() => { scrollToSection("FAQ"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">{translations[language].faq}</button>
+                      <button type="button" onClick={() => { scrollToSection("Activities"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">{translations[language].galerie}</button>
+                      <button type="button" onClick={() => { scrollToSection("Review"); setVillasDropdown(false); setMenuOpen(false); }} className="px-4 py-2 hover:bg-gray-700 text-left cursor-pointer">{translations[language].reviewer}</button>
                     </div>
                   )}
                 </div>
@@ -134,7 +130,7 @@ const Navbar = ({ onBookClick }) => {
             onClick={() => { scrollToSection("contact"); setMenuOpen(false); }}
             className="w-full px-4 py-2 rounded-full border border-white text-white font-semibold bg-transparent hover:bg-white/10 transition text-center"
           >
-            Contact
+            {translations[language].contact}
           </button>
         </div>
       )}

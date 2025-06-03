@@ -39,7 +39,7 @@ const LettersPullUp = ({ text, className = "" }) => {
   );
 };
 
-const Hero = ({ onBookClick }) => {
+const Hero = ({ language, t, onBookClick }) => {
   return (
     <section
       id="hero"
@@ -49,14 +49,14 @@ const Hero = ({ onBookClick }) => {
           {/* Titles on the left */}
           <div className="flex-1 w-full text-center md:text-left mb-6 md:mb-0">
             <span className="text-3xl sm:text-4xl md:text-6xl  tracking-tighter">
-              Explore live the experience,
+              {t.hero_explore || "Explore live the experience,"}
             </span>
-            <LettersPullUp text="Reserva Dunas Verdes" className="font-bold md:text-7xl" />
+            <LettersPullUp text={t.hero_title || "Reserva Dunas Verdes"} className="font-bold md:text-7xl" />
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 mt-2">
               <span className="text-3xl sm:text-4xl md:text-6xl tracking-tighter">
-                Where the
+                {t.hero_where || "Where the"}
               </span>
-              <LettersPullUp text=" wild meets refined." className="font-bold md:text-7xl" />
+              <LettersPullUp text={t.hero_wild || " wild meets refined."} className="font-bold md:text-7xl" />
             </div>
           </div>
           {/* Social icons on the right */}
@@ -92,10 +92,10 @@ const Hero = ({ onBookClick }) => {
               <span className="hero-slide-icon">
                 <FiArrowUpRight className="hero-slide-icon-rotate" />
               </span>
-              <span className="hero-slide-text">Book Your Stay</span>
+              <span className="hero-slide-text">{t.hero_book || "Book Your Stay"}</span>
             </button>
           </div>
-          <TypingEffect text="Between the dunes and turquoise waters of Mozambique, Dunas Verdes is a unique vision." />
+          <TypingEffect text={t.hero_subtitle || "Between the dunes and turquoise waters of Mozambique, Dunas Verdes is a unique vision."} />
         </div>
       </div>
     </section>

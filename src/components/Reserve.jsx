@@ -4,13 +4,13 @@ import { cn } from "../cn";
 import carouselData from "./carouselData.json";
 import { useWindowSize } from "./useWindowSize";
 
-const Reserve = () => {
+const Reserve = ({ t }) => {
   const [idx, setIdx] = useState(0);
   const { width } = useWindowSize ? useWindowSize() : { width: 1200 };
   const isMobile = width <= 768;
   const next = () => setIdx((i) => (i + 1) % carouselData.length);
   const prev = () => setIdx((i) => (i - 1 + carouselData.length) % carouselData.length);
-  const t = carouselData[idx];
+  const tData = carouselData[idx];
 
   return (
     <motion.section
@@ -26,10 +26,10 @@ const Reserve = () => {
           <div className="lg:w-1/2 lg:mx-6 w-full flex justify-center items-center relative">
             <AnimatePresence mode="wait">
               <motion.img
-                key={t.img}
+                key={tData.img}
                 className="object-cover object-center w-full h-96 rounded-lg lg:h-[30rem] lg:w-full"
-                src={t.img}
-                alt={t.title || t.quote || "carousel image"}
+                src={tData.img}
+                alt={tData.title || tData.quote || "carousel image"}
                 initial={{ opacity: 0, x: 80 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
@@ -40,24 +40,24 @@ const Reserve = () => {
               <>
                 <div className="absolute inset-0 flex flex-col justify-end items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-lg p-4 z-10">
                   <motion.h1
-                    key={t.titre || t.title || t.quote}
+                    key={tData.titre || tData.title || tData.quote}
                     className="text-lg font-semibold text-white mb-2 drop-shadow"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    {t.titre || t.title || t.quote}
+                    {t[tData.titre] || tData.titre || tData.title || tData.quote}
                   </motion.h1>
                   <motion.p
-                    key={t.desc || t.text}
+                    key={tData.desc || tData.text}
                     className="text-sm text-white mb-2 drop-shadow"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    {t.desc || t.text}
+                    {t[tData.desc] || tData.desc || tData.text}
                   </motion.p>
                 </div>
                 <button
@@ -108,50 +108,50 @@ const Reserve = () => {
               <p className="text-5xl font-semibold text-blue-500 ">“</p>
               <AnimatePresence mode="wait">
                 <motion.h1
-                  key={t.titre || t.title || t.quote}
+                  key={tData.titre || tData.title || tData.quote}
                   className="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  {t.titre || t.title || t.quote}
+                  {t[tData.titre] || tData.titre || tData.title || tData.quote}
                 </motion.h1>
               </AnimatePresence>
               <AnimatePresence mode="wait">
                 <motion.p
-                  key={t.desc || t.text}
+                  key={tData.desc || tData.text}
                   className="max-w-lg mt-6 text-gray-500 dark:text-gray-400 "
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  “ {t.desc || t.text} ”
+                  “ {t[tData.desc] || tData.desc || tData.text} ”
                 </motion.p>
               </AnimatePresence>
               <AnimatePresence mode="wait">
                 <motion.h3
-                  key={t.author || t.title}
+                  key={tData.author || tData.title}
                   className="mt-6 text-lg font-medium text-blue-500"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  {t.author || ""}
+                  {tData.author || ""}
                 </motion.h3>
               </AnimatePresence>
               <AnimatePresence mode="wait">
                 <motion.p
-                  key={t.role || t.title}
+                  key={tData.role || tData.title}
                   className="text-gray-600 dark:text-gray-300"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  {t.role || ""}
+                  {tData.role || ""}
                 </motion.p>
               </AnimatePresence>
               <div className="flex items-center justify-between mt-12 lg:justify-start">

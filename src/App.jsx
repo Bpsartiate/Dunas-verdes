@@ -14,10 +14,15 @@ import Review from "./components/Review";
 import Activities from "./components/Activities";
 import Footer from "./components/Footer";
 import LoadingPage from "./components/LoadingPage";
+import fr from "./fr.json";
+import en from "./en.json";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [showBooking, setShowBooking] = useState(false);
+  const [language, setLanguage] = useState("FR");
+  const translations = { FR: fr, EN: en };
+  const t = translations[language];
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1800); // Simulate loading
@@ -28,24 +33,24 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <Navbar language={language} setLanguage={setLanguage} translations={translations} />
       {showBooking ? (
         <>
-          <Booking onBack={() => setShowBooking(false)} />
-          <Footer />
+          <Booking language={language} t={t} onBack={() => setShowBooking(false)} />
+          <Footer language={language} t={t} />
         </>
       ) : (
         <>
-          <Hero onBookClick={() => setShowBooking(true)} />
-          <About />
-          <Reserve />
-          <Gallery />
-          <Activities />
-          <FAQ />
-          <Review />
-          {/* <Contact /> */}
-          <Investment />
-          <Footer />
+          <Hero language={language} t={t} onBookClick={() => setShowBooking(true)} />
+          <About language={language} t={t} />
+          <Reserve language={language} t={t} />
+          <Gallery language={language} t={t} />
+          <Activities language={language} t={t} />
+          <FAQ language={language} t={t} />
+          <Review language={language} t={t} />
+          {/* <Contact language={language} t={t} /> */}
+          <Investment language={language} t={t} />
+          <Footer language={language} t={t} />
         </>
       )}
     </div>
