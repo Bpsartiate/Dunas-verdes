@@ -1,6 +1,6 @@
 import React from "react";
 
-const Review = () => (
+const review = () => (
   <section className="bg-white dark:bg-gray-900" id="Review">
     <div className="container py-16 px-6 py-10 mx-auto">
       <div className="mt-6 md:flex md:items-center md:justify-between">
@@ -88,4 +88,4 @@ const Review = () => (
   </section>
 );
 
-export default Review;
+export default review;
