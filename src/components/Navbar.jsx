@@ -39,7 +39,7 @@ const Navbar = ({ onBookClick }) => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <button type="button" onClick={() => scrollToSection("hero")} className="py-2 pl-[50px] font-bold text-xl bg-transparent focus:outline-none cursor-pointer">
-            Dunas Verder
+            Dunas Verders
           </button>
         </div>
 
