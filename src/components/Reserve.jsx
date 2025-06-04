@@ -15,7 +15,7 @@ const Reserve = ({ t }) => {
   return (
     <motion.section
       id="reserve"
-      className="relative grid min-h-screen text-center w-full bg-neutral-950"
+      className="relative grid min-h-screen text-center w-full bg-neutral-950 !m-0"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

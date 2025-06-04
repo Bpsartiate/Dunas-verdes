@@ -1,16 +1,16 @@
 [
   {
-    "img": "/imgs/IMG_4632.JPG",
+    "img": "/imgs/dom1.JPG",
     "titre": "carousel_1_title",
     "desc": "carousel_1_desc"
   },
   {
-    "img": "/imgs/IMG_4633.JPG",
+    "img": "/imgs/plage (2).JPG",
     "titre": "carousel_2_title",
     "desc": "carousel_2_desc"
   },
   {
-    "img": "/imgs/IMG_4634.JPG",
+    "img": "/imgs/IMG_4639 (1).JPG",
     "titre": "carousel_3_title",
     "desc": "carousel_3_desc"
   },
@@ -20,12 +20,12 @@
     "desc": "carousel_4_desc"
   },
   {
-    "img": "/imgs/IMG_4636.JPG",
+    "img": "/imgs/plage1.JPG",
     "titre": "carousel_5_title",
     "desc": "carousel_5_desc"
   },
   {
-    "img": "/imgs/IMG_4637.JPG",
+    "img": "/imgs/recycle.JPG",
     "titre": "carousel_6_title",
     "desc": "carousel_6_desc"
   }

@@ -10,7 +10,7 @@ const FAQ = ({ t }) => (
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
   >
-    <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 px-5 py-16">
+    <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 px-5 py-8 !m-0">
   {/* Left: Title and Card */}
   <div className="flex flex-col items-center w-full lg:w-1/2 mb-10 lg:mb-0">
     <h2 className="font-bold text-4xl mt-5 tracking-tight text-black-700 mb-6 text-center">
@@ -26,8 +26,8 @@ const FAQ = ({ t }) => (
   </div>
   
   {/* Right: FAQ */}
-  <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-    <div className="grid divide-y divide-neutral-200 w-full max-w-xl">
+  <div className="w-full lg:w-1/2 flex flex-col items-center justify-center !m-0">
+    <div className="grid divide-y divide-neutral-200 w-full max-w-xl !m-0">
       
       {/* FAQ Items */}
       <div className="py-3">

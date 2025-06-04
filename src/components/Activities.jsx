@@ -8,7 +8,7 @@ import { useState } from "react";
 const Activities = ({ t }) => (
   <motion.section
     id="activities"
-    className="relative bg-white grid min-h-screen"
+    className="relative bg-white grid min-h-screen !m-0"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
@@ -24,7 +24,7 @@ const VerticalAccordion = ({ t }) => {
       id: 1,
       title: t.activities_marine_title,
       Icon: IoIosBoat,
-      imgSrc: "/imgs/IMG_4644.JPG",
+      imgSrc: "/imgs/IMG_4647.JPG",
       description: t.activities_marine_desc,
     },
     {
