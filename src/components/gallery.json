@@ -46,5 +46,85 @@
     "top": "35%",
     "left": "55%",
     "className": "w-24 md:w-48"
+  },
+  {
+    "src": "/imgs/IMG_4614.JPG",
+    "altKey": "gallery_alt_dune_ocean",
+    "rotate": "2deg",
+    "top": "10%",
+    "left": "10%",
+    "className": "w-32 md:w-52"
+  },
+  {
+    "src": "/imgs/IMG_4618.JPG",
+    "altKey": "gallery_alt_lever_soleil",
+    "rotate": "-8deg",
+    "top": "60%",
+    "left": "70%",
+    "className": "w-28 md:w-44"
+  },
+  {
+    "src": "/imgs/IMG_4620.JPG",
+    "altKey": "gallery_alt_sentier_sauvage",
+    "rotate": "5deg",
+    "top": "30%",
+    "left": "80%",
+    "className": "w-36 md:w-56"
+  },
+  {
+    "src": "/imgs/IMG_4622.JPG",
+    "altKey": "gallery_alt_faune_locale",
+    "rotate": "-10deg",
+    "top": "70%",
+    "left": "20%",
+    "className": "w-40 md:w-64"
+  },
+  {
+    "src": "/imgs/IMG_4623.JPG",
+    "altKey": "gallery_alt_plage_preservee",
+    "rotate": "7deg",
+    "top": "80%",
+    "left": "50%",
+    "className": "w-36 md:w-56"
+  },
+  {
+    "src": "/imgs/IMG_4625.JPG",
+    "altKey": "gallery_alt_coucher_soleil",
+    "rotate": "-5deg",
+    "top": "60%",
+    "left": "30%",
+    "className": "w-28 md:w-44"
+  },
+  {
+    "src": "/imgs/IMG_4631.JPG",
+    "altKey": "gallery_alt_dune_ocean",
+    "rotate": "3deg",
+    "top": "40%",
+    "left": "75%",
+    "className": "w-32 md:w-52"
+  },
+  {
+    "src": "/imgs/IMG_4634.JPG",
+    "altKey": "gallery_alt_lever_soleil",
+    "rotate": "-7deg",
+    "top": "15%",
+    "left": "85%",
+    "className": "w-28 md:w-44"
+  },
+  {
+    "src": "/imgs/IMG_4638.JPG",
+    "altKey": "gallery_alt_sentier_sauvage",
+    "rotate": "4deg",
+    "top": "55%",
+    "left": "10%",
+    "className": "w-36 md:w-56"
+  },
+  {
+    "src": "/imgs/IMG_4639 (1).JPG",
+    "altKey": "gallery_alt_faune_locale",
+    "rotate": "-9deg",
+    "top": "75%",
+    "left": "60%",
+    "className": "w-40 md:w-64"
   }
 ]

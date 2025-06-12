@@ -51,7 +51,7 @@ const Villas = ({ t }) => {
 			viewport={{ once: true, amount: 0.2 }}
 			transition={{ duration: 0.7, ease: "easeOut" }}
 		>
-			<div className="min-h-screen bg-white py-18 px-4 md:px-20 flex flex-col items-center justify-center">
+			<div className="min-h-screen font-['Playfair_Display'] bg-white py-18 px-4 md:px-20 flex flex-col items-center justify-center">
 				<div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_3fr] gap-8 items-center">
 					{/* First Column: 3 rows */}
 					<div className="flex flex-col gap-6 h-full justify-between">

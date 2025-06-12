@@ -15,7 +15,7 @@ const Reserve = ({ t }) => {
   return (
     <motion.section
       id="reserve"
-      className="relative grid min-h-screen text-center w-full bg-neutral-950 !m-0"
+      className="relative grid min-h-screen text-center w-full !m-0"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -41,7 +41,7 @@ const Reserve = ({ t }) => {
                 <div className="absolute inset-0 flex flex-col justify-end items-center bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-lg p-4 z-10">
                   <motion.h1
                     key={tData.titre || tData.title || tData.quote}
-                    className="text-lg font-semibold text-white mb-2 drop-shadow"
+                    className="text-lg font-semibold text-[#FFD700] mb-2 drop-shadow"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -30 }}
@@ -109,7 +109,7 @@ const Reserve = ({ t }) => {
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={tData.titre || tData.title || tData.quote}
-                  className="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96"
+                  className="text-2xl font-semibold text-gray-800 dark:text-dark lg:text-3xl lg:w-96"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
@@ -121,7 +121,7 @@ const Reserve = ({ t }) => {
               <AnimatePresence mode="wait">
                 <motion.p
                   key={tData.desc || tData.text}
-                  className="max-w-lg mt-6 text-gray-500 dark:text-gray-400 "
+                  className="max-w-lg mt-6 text-[#FFD700] dark:text-gray-800 "
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
@@ -158,7 +158,7 @@ const Reserve = ({ t }) => {
                 <button
                   title="left arrow"
                   onClick={prev}
-                  className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100"
+                  className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-blue-800 hover:bg-gray-100"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +178,7 @@ const Reserve = ({ t }) => {
                 <button
                   title="right arrow"
                   onClick={next}
-                  className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:mx-6 hover:bg-gray-100"
+                  className="p-2 text-gray-100 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 lg:mx-6 dark:hover:bg-blue-800 hover:bg-gray-100"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

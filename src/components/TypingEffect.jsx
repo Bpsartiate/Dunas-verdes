@@ -9,7 +9,7 @@ export function TypingEffect({ text = "Typing Effect" }) {
   return (
     <p
       ref={ref}
-      className="max-w-xl text-center md:text-left text-white text-base md:text-lg ml-0 md:mt-0 mt-0"
+      className="max-w-xl text-center md:text-left text-white text-base md:text-xl ml-0 md:mt-0 mt-0"
     >
       {text.split("").map((letter, index) => (
         <motion.span

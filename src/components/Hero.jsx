@@ -43,7 +43,7 @@ const Hero = ({ language, t, onBookClick }) => {
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col justify-center items-center text-white bg-opacity-80">
+      className="h-screen flex flex-col justify-center items-center text-white bg-opacity-80 font-['Playfair_Display']">
       <div className="container px-4 sm:px-6 md:pl-[50px] py-16 pt-24 md:pt-20">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-6 md:gap-0">
           {/* Titles on the left */}
@@ -60,7 +60,7 @@ const Hero = ({ language, t, onBookClick }) => {
             </div>
           </div>
           {/* Social icons on the right */}
-          <ul className="social-list flex flex-row md:flex-col p-1 gap-4 md:mt-8 md:ml-8 justify-center">
+          {/* <ul className="social-list flex flex-row md:flex-col p-1 gap-4 md:mt-8 md:ml-8 justify-center">
             <li>
               <a href="#" aria-label="Facebook">
                 <FaFacebookF />
@@ -76,7 +76,7 @@ const Hero = ({ language, t, onBookClick }) => {
                 <BsTwitterX />
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
         {/* button and description */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-start mt-8 md:pt-10 pt-6 gap-4 md:gap-8 w-full">

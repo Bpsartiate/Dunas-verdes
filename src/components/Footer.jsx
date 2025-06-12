@@ -1,85 +1,131 @@
-import React from "react";
-import Contact from "./Contact";
 
+import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP, FaYoutube } from 'react-icons/fa';
 const Footer = ({ language, t }) => (
-    <div id="contact" className="w-full min-h-screen flex items-center justify-center bg-black">
-        <div className="px-20 w-full px-4 text-white pt-20 flex flex-col">
-            <div className="flex flex-col md:flex-row w-full gap-8">
-                {/* First Column: Title and Description */}
-                <div className="flex flex-col w-full md:w-1/2 gap-4 justify-center md:justify-start mt-8 md:mt-0">
-                    <div className="w-full text-4xl md:text-7xl font-bold flex items-center justify-center md:justify-start mb-2 md:mb-4">
-                        <h1 className="w-full">{t.footer_title || "How can we help you. get in touch"}</h1>
-                    </div>
-                    <div className="w-full">
-                        <p className="text-gray-400 flex items-center text-base md:text-lg">{t.footer_subtitle || "We'd love to hear from you! Fill out the form and we'll get back to you soon."}</p>
-                    </div>
-                </div>
-                {/* Second Column: Contact Form */}
-                <div className="w-full md:w-1/2 flex justify-center items-center">
-                    <Contact language={language} t={t} />
-                </div>
-            </div>
-           
-            <div className="flex flex-col">
-                <div className="flex mt-10 mb-8 flex-row justify-between items-center">
-                     <a
-                            className="cursor-pointer font-bold text-gray-600 hover:text-white uppercase"
-                            onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.dunasVerdes || "Dunas Verdes"}
-                        </a>
-                    <nav className="hidden md:flex flex-row gap-8">
-                        <a
-                            className="cursor-pointer text-gray-600 hover:text-white uppercase"
-                            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.footer_about || "About"}
-                        </a>
-                        <a
-                            className="cursor-pointer text-gray-600 hover:text-white uppercase"
-                            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.footer_services || "Services"}
-                        </a>
-                        <a
-                            className="cursor-pointer text-gray-600 hover:text-white uppercase"
-                            onClick={() => document.getElementById('FAQ')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.footer_whyus || "Why us"}
-                        </a>
-                        <a
-                            className="cursor-pointer text-gray-600 hover:text-white uppercase"
-                            onClick={() => document.getElementById('Investment')?.scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.footer_investment || "Investment"}
-                        </a>
-                    </nav>
-                    <div className="flex flex-row space-x-8 items-center justify-between">
-                        <a>
-                            <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z" fill="white"/>
-                            </svg>                            
-                        </a>
-                        <a>
-                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.99536 2.91345C5.17815 2.91345 4.39441 3.23809 3.81655 3.81594C3.2387 4.3938 2.91406 5.17754 2.91406 5.99475C2.91406 6.81196 3.2387 7.5957 3.81655 8.17356C4.39441 8.75141 5.17815 9.07605 5.99536 9.07605C6.81257 9.07605 7.59631 8.75141 8.17417 8.17356C8.75202 7.5957 9.07666 6.81196 9.07666 5.99475C9.07666 5.17754 8.75202 4.3938 8.17417 3.81594C7.59631 3.23809 6.81257 2.91345 5.99536 2.91345ZM5.99536 7.99586C5.46446 7.99586 4.9553 7.78496 4.57989 7.40955C4.20448 7.03415 3.99358 6.52499 3.99358 5.99408C3.99358 5.46318 4.20448 4.95402 4.57989 4.57861C4.9553 4.20321 5.46446 3.99231 5.99536 3.99231C6.52626 3.99231 7.03542 4.20321 7.41083 4.57861C7.78624 4.95402 7.99714 5.46318 7.99714 5.99408C7.99714 6.52499 7.78624 7.03415 7.41083 7.40955C7.03542 7.78496 6.52626 7.99586 5.99536 7.99586Z" fill="white"/>
-                                <path d="M9.19863 3.51848C9.59537 3.51848 9.91698 3.19687 9.91698 2.80013C9.91698 2.4034 9.59537 2.08179 9.19863 2.08179C8.8019 2.08179 8.48029 2.4034 8.48029 2.80013C8.48029 3.19687 8.8019 3.51848 9.19863 3.51848Z" fill="white"/>
-                                <path d="M11.6821 2.06975C11.5279 1.67138 11.2921 1.30961 10.99 1.00759C10.6879 0.705576 10.326 0.469972 9.92759 0.31586C9.46135 0.140842 8.9688 0.0462069 8.4709 0.0359839C7.82919 0.00799638 7.62594 0 5.99867 0C4.37139 0 4.16282 -6.70254e-08 3.52643 0.0359839C3.02891 0.0456842 2.53671 0.140339 2.07108 0.31586C1.67255 0.469792 1.31059 0.705333 1.00844 1.00737C0.706289 1.30941 0.47061 1.67127 0.316526 2.06975C0.141474 2.53595 0.0470554 3.02855 0.0373167 3.52643C0.00866281 4.16748 0 4.37072 0 5.99867C0 7.62594 -4.96485e-09 7.83319 0.0373167 8.4709C0.0473123 8.96935 0.14127 9.46113 0.316526 9.92825C0.471042 10.3266 0.70695 10.6883 1.00918 10.9903C1.3114 11.2923 1.6733 11.5279 2.07175 11.6821C2.5365 11.8642 3.0289 11.9656 3.52777 11.982C4.16948 12.01 4.37272 12.0187 6 12.0187C7.62728 12.0187 7.83585 12.0187 8.47223 11.982C8.97008 11.9719 9.46262 11.8775 9.92892 11.7028C10.3272 11.5483 10.689 11.3125 10.9911 11.0104C11.2932 10.7083 11.529 10.3466 11.6835 9.94825C11.8587 9.48179 11.9527 8.99 11.9627 8.49156C11.9913 7.85051 12 7.64727 12 6.01932C12 4.39138 12 4.18481 11.9627 3.54709C11.9549 3.04216 11.86 2.54237 11.6821 2.06975ZM10.8705 8.42159C10.8662 8.80562 10.7961 9.18608 10.6633 9.54642C10.5632 9.80555 10.41 10.0409 10.2135 10.2372C10.017 10.4336 9.78162 10.5867 9.52243 10.6866C9.16608 10.8188 8.78967 10.8889 8.4096 10.8938C7.77654 10.9231 7.59796 10.9305 5.97468 10.9305C4.35007 10.9305 4.18414 10.9305 3.53909 10.8938C3.15921 10.8892 2.78298 10.8191 2.42692 10.6866C2.16683 10.5873 1.93048 10.4345 1.73316 10.2381C1.53584 10.0417 1.38194 9.80605 1.28143 9.54642C1.15045 9.18995 1.08039 8.81398 1.07419 8.43425C1.04554 7.8012 1.03887 7.62261 1.03887 5.99933C1.03887 4.37539 1.03887 4.20946 1.07419 3.56375C1.0785 3.17993 1.14859 2.7997 1.28143 2.43958C1.48467 1.91382 1.90116 1.5 2.42692 1.29876C2.78316 1.16691 3.15928 1.09682 3.53909 1.09151C4.17281 1.06286 4.35073 1.05486 5.97468 1.05486C7.59862 1.05486 7.76522 1.05486 8.4096 1.09151C8.7897 1.09609 9.16617 1.1662 9.52243 1.29876C9.7816 1.39889 10.017 1.55211 10.2134 1.74858C10.4099 1.94504 10.5631 2.18041 10.6633 2.43958C10.7942 2.79606 10.8643 3.17203 10.8705 3.55175C10.8992 4.18547 10.9065 4.36339 10.9065 5.98734C10.9065 7.61062 10.9065 7.78521 10.8778 8.42226H10.8705V8.42159Z" fill="white"/>
-                            </svg>    
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCjtCbnkIaiCJgj13sEZ9iqw">
-                            <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.7355 1.415C12.6616 1.14357 12.517 0.896024 12.3162 0.697014C12.1154 0.498004 11.8654 0.354468 11.5911 0.280692C10.5739 0.00450089 6.5045 4.87928e-06 6.5045 4.87928e-06C6.5045 4.87928e-06 2.43578 -0.00449139 1.41795 0.259496C1.14379 0.336667 0.894302 0.482233 0.693428 0.68222C0.492554 0.882207 0.347041 1.1299 0.270859 1.40152C0.00259923 2.40737 9.51671e-07 4.49358 9.51671e-07 4.49358C9.51671e-07 4.49358 -0.0025972 6.59006 0.263714 7.58564C0.413109 8.13609 0.851549 8.57094 1.40885 8.71931C2.43643 8.9955 6.49476 9 6.49476 9C6.49476 9 10.5641 9.00449 11.5813 8.74115C11.8557 8.6675 12.106 8.52429 12.3073 8.32569C12.5086 8.12709 12.6539 7.87996 12.729 7.60876C12.998 6.60355 12.9999 4.51798 12.9999 4.51798C12.9999 4.51798 13.0129 2.42086 12.7355 1.415ZM5.20282 6.42628L5.20607 2.57244L8.58823 4.50257L5.20282 6.42628Z" fill="white"/>
-                            </svg>                            
-
-                        </a>
-                    </div>
-                </div>
-                <hr className="border-gray-600"/>
-                <p className="w-full text-center my-12 text-gray-600">{t.footer_copyright || "Copyright © 2025 Dunas Verdes"}</p>
-            </div>
+   <>
+    <div className="w-full bg-[#f5f5dc] py-10 flex flex-col md:flex-row items-center justify-between px-6 md:px-20">
+      <div className="flex-1 flex flex-col items-start mb-6 md:mb-0">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-gray-800">Subscribe to our Newsletter</h2>
+        <p className="text-base text-gray-600 mb-4">Stay updated with the latest news, offers, and stories from Dunas Verdes.</p>
+        {/* Styled Subscribe Input */}
+        <div style={{ width: '100%', maxWidth: 350 }}>
+          <div style={{
+            width: 'fit-content',
+            height: 45,
+            borderRadius: 20,
+            padding: 5,
+            boxSizing: 'content-box',
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor: '#292524',
+          }}>
+            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style={{ width: 30, fill: '#fff', marginLeft: 8, transition: 'all 0.3s' }}>
+              <g data-name="Layer 2">
+                <g data-name="inbox">
+                  <rect width={24} height={24} transform="rotate(180 12 12)" opacity={0} />
+                  <path d="M20.79 11.34l-3.34-6.68A3 3 0 0 0 14.76 3H9.24a3 3 0 0 0-2.69 1.66l-3.34 6.68a2 2 0 0 0-.21.9V18a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-5.76a2 2 0 0 0-.21-.9zM8.34 5.55a1 1 0 0 1 .9-.55h5.52a1 1 0 0 1 .9.55L18.38 11H16a1 1 0 0 0-1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 0-1-1H5.62z" />
+                </g>
+              </g>
+            </svg>
+            <input type="email" name="email" placeholder="info@gmail.com" style={{
+              maxWidth: 170,
+              height: '100%',
+              border: 'none',
+              outline: 'none',
+              paddingLeft: 15,
+              backgroundColor: '#292524',
+              color: 'white',
+              fontSize: '1em',
+              flex: 1,
+            }} />
+            <button type="submit" style={{
+              height: '100%',
+              width: 95,
+              border: 'none',
+              borderRadius: 15,
+              color: '#000',
+              cursor: 'pointer',
+              backgroundColor: '#fff',
+              fontWeight: 500,
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              transition: 'all 0.3s',
+            }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width={30} height={10} viewBox="0 0 38 15" style={{ position: 'absolute', marginRight: 150, transition: 'all 0.3s' }}>
+                <path d="M10 7.519l-.939-.344h0l.939.344zm14.386-1.205l-.981-.192.981.192zm1.276 5.509l.537.843.148-.094.107-.139-.792-.611zm4.819-4.304l-.385-.923h0l.385.923zm7.227.707a1 1 0 0 0 0-1.414L31.343.448a1 1 0 0 0-1.414 0 1 1 0 0 0 0 1.414l5.657 5.657-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364zM1 7.519l.554.833.029-.019.094-.061.361-.23 1.277-.77c1.054-.609 2.397-1.32 3.629-1.787.617-.234 1.17-.392 1.623-.455.477-.066.707-.008.788.034.025.013.031.021.039.034a.56.56 0 0 1 .058.235c.029.327-.047.906-.39 1.842l1.878.689c.383-1.044.571-1.949.505-2.705-.072-.815-.45-1.493-1.16-1.865-.627-.329-1.358-.332-1.993-.244-.659.092-1.367.305-2.056.566-1.381.523-2.833 1.297-3.921 1.925l-1.341.808-.385.245-.104.068-.028.018c-.011.007-.011.007.543.84zm8.061-.344c-.198.54-.328 1.038-.36 1.484-.032.441.024.94.325 1.364.319.45.786.64 1.21.697.403.054.824-.001 1.21-.09.775-.179 1.694-.566 2.633-1.014l3.023-1.554c2.115-1.122 4.107-2.168 5.476-2.524.329-.086.573-.117.742-.115s.195.038.161.014c-.15-.105.085-.139-.076.685l1.963.384c.192-.98.152-2.083-.74-2.707-.405-.283-.868-.37-1.28-.376s-.849.069-1.274.179c-1.65.43-3.888 1.621-5.909 2.693l-2.948 1.517c-.92.439-1.673.743-2.221.87-.276.064-.429.065-.492.057-.043-.006.066.003.155.127.07.099.024.131.038-.063.014-.187.078-.49.243-.94l-1.878-.689zm14.343-1.053c-.361 1.844-.474 3.185-.413 4.161.059.95.294 1.72.811 2.215.567.544 1.242.546 1.664.459a2.34 2.34 0 0 0 .502-.167l.15-.076.049-.028.018-.011c.013-.008.013-.008-.524-.852l-.536-.844.019-.012c-.038.018-.064.027-.084.032-.037.008.053-.013.125.056.021.02-.151-.135-.198-.895-.046-.734.034-1.887.38-3.652l-1.963-.384zm2.257 5.701l.791.611.024-.031.08-.101.311-.377 1.093-1.213c.922-.954 2.005-1.894 2.904-2.27l-.771-1.846c-1.31.547-2.637 1.758-3.572 2.725l-1.184 1.314-.341.414-.093.117-.025.032c-.01.013-.01.013.781.624zm5.204-3.381c.989-.413 1.791-.42 2.697-.307.871.108 2.083.385 3.437.385v-2c-1.197 0-2.041-.226-3.19-.369-1.114-.139-2.297-.146-3.715.447l.771 1.846z" /></svg>Subscribe
+            </button>
+          </div>
         </div>
+      </div>
+      <div className="flex-1 flex justify-center md:justify-end w-full">
+        <img src="/imgs/newsletter.webp" alt="Newsletter" className="max-w-xl w-full" />
+      </div>
     </div>
+   <footer className="bg-white py-12 px-6 md:px-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start md:items-center">
+        {/* Logo Section */}
+        <div className="flex flex-col items-start">
+          <div className="mb-3">
+            {/* Replace with actual logo image if available */}
+            {/* <div className="flex flex-col items-center">
+              <div className="flex space-x-2 mb-1">
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+              </div>
+              <div className="flex space-x-2">
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+                <span className="w-3 h-3 bg-purple-800 rounded-full"></span>
+              </div>
+            </div> */}
+          </div>
+          <span className="text-lg tracking-widest font-serif text-gray-800">Dunas Verdes</span>
+        </div>
+
+        {/* Links Section */}
+        <div className="flex flex-col items-start">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3 md:mb-4 md:inline-block align-middle">Dunas Verdes</h3>
+          <ul className="space-y-1 text-gray-600 text-base">
+            <li>News</li>
+            <li>Newsletter</li>
+            <li>Travel trade</li>
+            <li>Media center</li>
+            <li>Development</li>
+            <li>Terms and conditions</li>
+            <li>Privacy</li>
+            <li>Cookie Policy</li>
+            <li>Cookie Preferences</li>
+          </ul>
+        </div>
+
+        {/* Contact Section */}
+        <div className="flex flex-col items-start">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3  md:mb-4 md:inline-block align-middle">GET IN TOUCH</h3>
+          <div className="text-gray-600 text-base mb-4">
+            <div>Reserva Dunas Verdes</div>
+            <div>Inhambane Province</div>
+            <div>57 Wireless Road,Praia da Rocha and Tofo</div>
+            <div>Mozambique</div>
+          </div>
+          <div className="text-gray-600 text-base mb-2">mail@dunas.com</div>
+          <div className="text-gray-600 text-base">+258 xxx xxx xxx</div>
+          {/* Social Icons */}
+<div className="flex flex-col items-start">
+          <div className="flex space-x-5 mt-8">
+            <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-purple-800 text-2xl"><FaFacebookF /></a>
+            <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-purple-800 text-2xl"><FaTwitter /></a>
+            <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-purple-800 text-2xl"><FaInstagram /></a>
+            <a href="#" aria-label="Pinterest" className="text-gray-500 hover:text-purple-800 text-2xl"><FaPinterestP /></a>
+            <a href="#" aria-label="YouTube" className="text-gray-500 hover:text-purple-800 text-2xl"><FaYoutube /></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </>
 );
 
 export default Footer;

@@ -6,12 +6,12 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Reserve from "./components/Reserve";
 import Booking from "./components/Booking";
-import Investment from "./components/Investment";
-import FAQ from "./components/FAQ";
+// import Investment from "./components/Investment";
+// import FAQ from "./components/FAQ";
 import Gallery from "./components/Gallery";
-import Review from "./components/Review";
-// import Contact from "./components/Contact";
-import Activities from "./components/Activities";
+// import Review from "./components/Review";
+import Contact from "./components/Contact";
+// import Activities from "./components/Activities";
 import Footer from "./components/Footer";
 import LoadingPage from "./components/LoadingPage";
 import fr from "./fr.json";
@@ -45,11 +45,11 @@ function App() {
           <About language={language} t={t} />
           <Reserve language={language} t={t} />
           <Gallery language={language} t={t} />
-          <Activities language={language} t={t} />
-          <FAQ language={language} t={t} />
-          <Review language={language} t={t} />
+          {/* <Activities language={language} t={t} /> */}
+          {/* <FAQ language={language} t={t} /> */}
+          {/* <Review language={language} t={t} /> */}
           {/* <Contact language={language} t={t} /> */}
-          <Investment language={language} t={t} />
+          {/* <Investment language={language} t={t} /> */}
           <Footer language={language} t={t} />
         </>
       )}
