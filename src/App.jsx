@@ -16,6 +16,9 @@ import Footer from "./components/Footer";
 import LoadingPage from "./components/LoadingPage";
 import fr from "./fr.json";
 import en from "./en.json";
+import Vision from "./components/Vision";
+import Lexperience from "./components/Lexperience";
+import Fondation from "./components/Fondation";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,9 +45,12 @@ function App() {
       ) : (
         <>
           <Hero language={language} t={t} onBookClick={() => setShowBooking(true)} />
-          <About language={language} t={t} />
+          {/* <About language={language} t={t} /> */}
+          <Vision />
+          <Lexperience />
+          {/* <Fondation /> */}
           <Reserve language={language} t={t} />
-          <Gallery language={language} t={t} />
+          {/* <Gallery language={language} t={t} /> */}
           {/* <Activities language={language} t={t} /> */}
           {/* <FAQ language={language} t={t} /> */}
           {/* <Review language={language} t={t} /> */}

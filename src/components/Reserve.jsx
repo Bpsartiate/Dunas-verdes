@@ -109,7 +109,7 @@ const Reserve = ({ t }) => {
               <AnimatePresence mode="wait">
                 <motion.h1
                   key={tData.titre || tData.title || tData.quote}
-                  className="text-2xl font-semibold text-gray-800 dark:text-dark lg:text-3xl lg:w-96"
+                  className="text-2xl px-10 justify-text-center font-['Playfair_Display'] font-semibold text-gray-800 dark:text-dark lg:text-3xl lg:w-96"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
@@ -121,7 +121,7 @@ const Reserve = ({ t }) => {
               <AnimatePresence mode="wait">
                 <motion.p
                   key={tData.desc || tData.text}
-                  className="max-w-lg mt-6 text-[#FFD700] dark:text-gray-800 "
+                  className="max-w-lg mt-6 font-['Playfair_Display'] text-[#FFD700] dark:text-gray-800 "
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}

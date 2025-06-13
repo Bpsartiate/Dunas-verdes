@@ -70,13 +70,13 @@
   align-items: center;
   overflow: hidden;
   background: #fff;
-  color: #15803d;
+  color: #baf105;
   border-radius: 50px;
   min-width: 200px;
   height: 60px;
   padding: 0 1.5rem;
-  border: 2px solid #ffffff00;
-  box-shadow: 0 2px 8px 0 rgba(179, 0, 0, 0.08);
+  border: 2px solid #fdd70000;
+  box-shadow: 0 2px 8px 0 rgba(7, 255, 139, 0.08);
   transition: background 0.3s;
 }
 .hero-slide-btn:hover {
@@ -93,7 +93,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #14532d;
+  background: #d4910c;
   color: #fff;
   z-index: 2;
   transition: left 0.5s cubic-bezier(0.4,0,0.2,1), background 0.3s, transform 0.5s cubic-bezier(0.4,0,0.2,1);
@@ -110,7 +110,7 @@
 }
 .hero-slide-text {
   position: relative;
-  color: #15803d;
+  color: #d4910c;
   font-weight: 600;
   font-size: 1rem;
   white-space: nowrap;

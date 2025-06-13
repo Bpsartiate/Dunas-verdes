@@ -67,9 +67,9 @@ const Navbar = ({ onBookClick, language, setLanguage, translations }) => {
       {sidebarOpen && (
         <div className="fixed inset-0 z-40 flex">
           {/* Sidebar background overlay */}
-          <div className="fixed inset-0 bg-transparent bg-opacity-10" onClick={() => setSidebarOpen(false)} />
+          <div className="fixed inset-0 bg-w bg-opacity-10" onClick={() => setSidebarOpen(false)} />
           {/* Sidebar content */}
-          <div className="relative w-80 max-w-full h-full bg-white 500 shadow-lg z-50 flex flex-col p-6">
+          <div className={`fixed left-0 top-0 w-80 max-w-full h-full ${scroll ? "bg-white" : "bg-white"} shadow-lg z-50 flex flex-col p-6${sidebarOpen ? " animate-fadeIn" : ""}`}>
             <button
               type="button"
               onClick={() => setSidebarOpen(false)}
