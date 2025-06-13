@@ -26,14 +26,14 @@ const Lexperience = () => {
           <div className="relative bg-white shadow-lg overflow-visible w-full max-w-xl">
             {/* Main image */}
             <img
-              src="/public/imgs/mer1.jpg"
+              src="/imgs/mer1.JPG"
               alt="Vision Dunas Verdes"
               className="w-full h-120 object-cover rounded-t"
             />
             {/* 3 images stacked above main image */}
             <div className="absolute right-90 top-60 w-64 h-40">
               <img
-                src="/public/imgs/mer.JPG"
+                src="/imgs/mer.JPG"
                 alt="Dunas Verdes 4"
                 className="w-80 h-80 object-cover rounded shadow-lg"
               />

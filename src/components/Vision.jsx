@@ -14,7 +14,7 @@ const Vision = () => {
         <div className="flex justify-start">
           <div className="bg-white shadow-lg overflow-hidden w-full max-w-xl">
             <img
-              src="/public/imgs/dom3.jpg"
+              src="/imgs/dom3.JPG"
               alt="Vision Dunas Verdes"
               className="w-full h-130 object-cover"
             />
