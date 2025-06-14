@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { motion, AnimatePresence } from "framer-motion";
 import VisionButton from './VisionButton';
 
 const StyledWrapper = ({ children }) => (
@@ -8,7 +8,14 @@ const StyledWrapper = ({ children }) => (
 
 const Vision = () => {
   return (
-    <section className="relative grid min-h-screen text-center w-full flex flex-col items-start justify-center bg-white text-gray-900 px-4 py-16">
+ <motion.section
+      id="reserve"
+      className="relative grid min-h-screen text-center w-full !m-0"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
       <div className="w-full  max-w-1xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
         {/* Card with image */}
         <div className="flex justify-start">
@@ -40,8 +47,8 @@ const Vision = () => {
           </StyledWrapper>
         </div>
       </div>
-    </section>
-  );
+    </motion.section>
+    );
 };
 
 export default Vision;

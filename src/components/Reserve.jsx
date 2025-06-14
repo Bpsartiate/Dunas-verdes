@@ -21,13 +21,13 @@ const Reserve = ({ t }) => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      <div className="container px-6 py-10 mx-auto">
+      <div className="container ">
         <div className="lg:-mx-6 pt-15 lg:flex lg:items-center">
           <div className="lg:w-1/2 lg:mx-6 w-full flex justify-center items-center relative">
             <AnimatePresence mode="wait">
               <motion.img
                 key={tData.img}
-                className="object-cover object-center w-full h-96 rounded-lg lg:h-[30rem] lg:w-full"
+                className="object-cover object-center w-full h-96  lg:h-[30rem] lg:w-full"
                 src={tData.img}
                 alt={tData.title || tData.quote || "carousel image"}
                 initial={{ opacity: 0, x: 80 }}

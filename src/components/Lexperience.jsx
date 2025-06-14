@@ -1,10 +1,18 @@
 import VisionButton from './VisionButton';
+import { motion, AnimatePresence } from "framer-motion";
+
 
 
 const Lexperience = () => {
   return (
-     <section className="min-h-screen flex flex-col items-start justify-center bg-white text-gray-900 px-4 py-16">
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+ <motion.section
+      id="reserve"
+      className="relative grid min-h-screen text-center w-full !m-0"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
          {/* Text column */}
         <div className="flex p-20  flex-col justify-start items-start">
             <p className='pb-3 text-bold-900 text-gray-600' >Reserva Dunas Experience</p>
@@ -22,27 +30,34 @@ const Lexperience = () => {
           </div>
         </div>
         {/* Card with images stacked above main image */}
-        <div className="flex max-w-5xl  justify-start">
+        <div className="flex   justify-start">
           <div className="relative bg-white shadow-lg overflow-visible w-full max-w-xl">
             {/* Main image */}
             <img
               src="/imgs/mer1.JPG"
               alt="Vision Dunas Verdes"
-              className="w-full h-120 object-cover rounded-t"
+              className="w-full h-120 object-cover"
             />
             {/* 3 images stacked above main image */}
-            <div className="absolute right-90 top-60 w-64 h-40">
+            <div className="absolute right-97 top-60 w-64 h-40">
               <img
                 src="/imgs/mer.JPG"
                 alt="Dunas Verdes 4"
                 className="w-80 h-80 object-cover rounded shadow-lg"
               />
             </div>
+                {/* <div className="absolute left-120 bottom-100 w-64 h-40">
+              <img
+                src="/imgs/mer.JPG"
+                alt="Dunas Verdes 4"
+                className="w-40 h-40 object-cover rounded shadow-lg"
+              />
+            </div> */}
           </div>
         </div>
        
       </div>
-    </section>
+    </motion.section>
   );
 };
 
